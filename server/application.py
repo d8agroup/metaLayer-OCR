@@ -5,6 +5,10 @@ from tesseract import Tesseract
 
 app = Flask(__name__)
 
+@app.route('/test')
+def test():
+    return "worked"
+
 @app.route('/services/1/ocr', methods=['POST'])
 def extract_text_from_image():
     #Check for the presence of the image
