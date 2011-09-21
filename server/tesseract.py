@@ -50,7 +50,7 @@ class Tesseract:
 		
 	def image_to_scratch(self, im, scratch_image_name):
 		"""Saves image in memory to scratch file.  .bmp format will be read correctly by Tesseract"""
-		im.save(scratch_image_name, dpi=(200,200))
+		im.save(scratch_image_name, "bmp", dpi=(200,200))
 	
 	def	retrieve_text(self, scratch_text_name_root):
 		inf = file(scratch_text_name_root + '.txt')
