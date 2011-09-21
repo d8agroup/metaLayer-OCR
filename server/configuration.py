@@ -1,7 +1,7 @@
 import socket
 
 #ERROR HANDELING
-MASK_ERRORS = True
+MASK_ERRORS = False
 
 #TESSERACT CONFIG
 TESSERACT_EXE = 'tesseract'
