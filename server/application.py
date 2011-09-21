@@ -23,11 +23,11 @@ def extract_text_from_image():
     
     try:
         image = Image.open(file)
-    except:
+    except Error, e:
         if MASK_ERRORS:
             return jsonify(JSON_NONEIMAGE)
         else:
-            pass
+            return jsonify(error=e)
     
     image_id= request.form['image_id']
     
@@ -35,10 +35,10 @@ def extract_text_from_image():
     
     try:
         text = tesseract.image_to_string(image)
-    except:
+    except Error, e:
         if MASK_ERRORS:
             return jsonify(JSON_OCRFAILED)
         else:
-            pass
+            return jsonify(error=e)
         
     return jsonify(JSON_SUCCESS, text=text)
