@@ -23,7 +23,7 @@ def extract_text_from_image():
     
     try:
         image = Image.open(file)
-    except Error, e:
+    except Exception, e:
         if MASK_ERRORS:
             return jsonify(JSON_NONEIMAGE)
         else:
@@ -35,7 +35,7 @@ def extract_text_from_image():
     
     try:
         text = tesseract.image_to_string(image)
-    except Error, e:
+    except Exception, e:
         if MASK_ERRORS:
             return jsonify(JSON_OCRFAILED)
         else:
