@@ -31,7 +31,6 @@ class Tesseract:
 		image_name = "%s.bmp" % self.image_id
 		scratch_image_name = os.path.join(self.scratch_dir, image_name)
 		scratch_text_name_root = os.path.join(self.scratch_dir, self.image_id)
-		print image_name
 		try:
 			self.image_to_scratch(im, scratch_image_name)
 			self._call_tesseract(scratch_image_name, scratch_text_name_root)
