@@ -1,5 +1,8 @@
 import socket
 
+#ERROR HANDELING
+MASK_ERRORS = False
+
 #TESSERACT CONFIG
 TESSERACT_EXE = 'tesseract'
 TESSERACT_SCRATCH = '/tmp/'
@@ -14,4 +17,5 @@ JSON_OCRFAILED = { 'status':'failed', 'code':103, 'error':'The OCR engine could 
 
 #DEV SPECIFIC CONFIG
 if socket.gethostname() == 'matt-griffiths':
+    MASK_ERRORS = False
     pass
