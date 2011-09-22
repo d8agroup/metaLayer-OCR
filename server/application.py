@@ -33,7 +33,7 @@ def extract_text_from_image():
     tesseract = Tesseract(image_id, TESSERACT_EXE, TESSERACT_SCRATCH, TESSERACT_CLEANUP)
     
     try:
-        text = tesseract.image_to_string(image)
+        text = tesseract.image_to_string(image).encode('utf-8')
     except Exception, e:
         if MASK_ERRORS:
             return jsonify(JSON_OCRFAILED)
